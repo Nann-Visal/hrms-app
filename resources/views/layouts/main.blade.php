@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- bootstrap style -->
+    <link rel="stylesheet" href="/bootstrap-5.3.0-alpha3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="/assets/images/icons/ic_web.png">
+    <title>Div.Alain</title>
+
+
+</head>
+<body>
+   
+    <!-- header -->
+    <nav class="navbar navbar-light box-navbar">
+        <img id="img-web" src="/assets/images/icons/ic_web.png" alt="">
+        <div class="container-fluid">
+            <div class="box-username">
+                <p id="txt-username">J.Bonapha</p>
+                <div class="sub-menu">
+                    <ul>
+                        <li><a href="{{url('/signin')}}">Log Out</a></li>
+                        <li><a href="#">Admin</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box-dropmn">
+                <img id="ic-dropmn" src="/assets/images/icons/ic_drop_mn.png" alt="">
+            </div>
+            <img class="box-profile" id="img-profile" src="/assets/images/img/OIP.jpeg" alt="">
+        </div>
+    </nav>
+    <!-- end header -->
+    <!-- start sidebar -->
+    <div class="box-sidebar">
+            <ul>
+                <li ><a href="{{url('/dashboard')}}" class=" {{Request::path() == '/dashboard' ? 'item-active' : ''}} ">
+                    <i class="fa-solid fa-gauge"></i>
+                    <span>Dashboard</span>
+                </a></li>
+                <li><a href="{{url('/departments')}}" class=" {{Request::path() == '/departments' ? 'item-active' : ''}} " >
+                    <i class="fa-brands fa-delicious"></i>
+                    <span>Departments</span>
+                </a></li>
+                <li><a href="{{url('/projects')}}" class=" {{Request::path() == '/ptojects' ? 'item-active' : ''}} " >
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Projects</span>
+                </a></li>
+                <li><a href="{{url('/tasks')}}" class=" {{Request::path() == '/tasks' ? 'item-active' : ''}} " >
+                    <i class="fa-solid fa-bars-progress"></i>
+                    <span>Tasks</span>
+                </a></li>
+                <li><a href="{{url('/employees')}}" class=" {{Request::path() == '/employees' ? 'item-active' : ''}} " >
+                    <i class="fa-solid fa-people-arrows"></i>
+                    <span>Employees</span>
+                </a></li>
+                <li><a href="{{url('/takeleaves')}}" class=" {{Request::path() == '/takeleaves' ? 'item-active' : ''}} " >
+                    <i class="fa-solid fa-person-walking-arrow-right"></i>
+                    <span>Take Leaves</span>
+                </a></li>
+                <li><a href="{{url('/pendingleaves')}}" class=" {{Request::path() == '/pendingleaves' ? 'item-active' : ''}} " >
+                    <i class="fa-solid fa-arrow-trend-down"></i>
+                    <span>Pending Leaves</span>
+                </a></li>
+                <li><a href="{{url('/attendants')}}" class=" {{Request::path() == '/attendats' ? 'item-active' : ''}} " >
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    <span>Attendants</span>
+                </a></li>
+                <li><a href="{{url('/events')}}" class=" {{Request::path() == '/events' ? 'item-active' : ''}} ">
+                    <i class="fa-solid fa-calendar"></i>
+                    <span>Events</span>
+                </a></li>
+
+                <li><a href="{{url('/payments')}}" class=" {{Request::path() == '/payments' ? 'item-active' : ''}} ">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <span>Payments</span>
+                </a></li>
+
+                <li><a href="{{url('/overtimes')}}" class=" {{Request::path() == '/overtimes' ? 'item-active' : ''}} ">
+                    <i class="fa-solid fa-business-time"></i>
+                    <span>Overtime</span>
+                </a></li>
+            </ul>
+    </div>
+    <!-- end sidebar -->
+
+    <!-- start content -->
+    <div class="container-fluid box-body">
+        @yield('content')
+    </div>
+    <!-- end content -->
+    <!-- javascript and jquery for bootstrap -->
+    <script src="/bootstrap-5.3.0-alpha3-dist/js/bootstrap.js"></script>
+    <script src="/assets/jquery.js"></script>
+    <script src="/assets/js/jaction.js"></script>
+</body>
+@yield('modal')
+</html>
