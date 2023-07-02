@@ -7,7 +7,7 @@
                     <i class="fa-solid fa-diagram-project"></i>
                     <p>Project Summary</p>
                 </div>
-                <span><p>57</p></span>
+                <span><p>{{$project}}</p></span>
             </div>
         </div>
         <div class="col-xl-3 col-lg-3">
@@ -16,7 +16,7 @@
                     <i class="fa-solid fa-diagram-project"></i>
                     <p>Project Completed</p>
                 </div>
-                <span><p>37</p></span>
+                <span><p>{{$project_completed}}</p></span>
             </div>
         </div>
         <div class="col-xl-3 col-lg-3">
@@ -25,7 +25,7 @@
                     <i class="fa-solid fa-diagram-project"></i>
                     <p>Project Running</p>
                 </div>
-                <span><p>15</p></span>
+                <span><p>{{$project_running}}</p></span>
             </div>
         </div>
         <div class="col-xl-3 col-lg-3">
@@ -34,54 +34,58 @@
                     <i class="fa-solid fa-diagram-project"></i>
                     <p>Project Failed</p>
                 </div>
-                <span><p>5</p></span>
+                <span><p>{{$project_failed}}</p></span>
             </div>
         </div>
         <div class="col-xl-6 col-lg-6">
             <div class="box-emp-contents">
-                    <div class="col-xl-3">
+                    <div class="col-xl-1">
                         <i class="fa-solid fa-user-minus"></i>
                     </div>
-                    <div class="col-xl-9">
-                        <span><p>Former Employees <br>
-                            0
-                        </p></span>
+                    <div class="col-xl-10">
+                        <span><p>Former Employees</p></span>
                     </div>
-            </div>
-        </div>
-        <div class="col-xl-6 col-lg-6">
-            <div class="box-emp-contents">
-                    <div class="col-xl-3">
-                        <i class="fa-solid fa-user-minus"></i>
-                    </div>
-                    <div class="col-xl-9">
-                        <span><p>Pending Leaves <br>
-                            3
-                        </p></span>
+                    <div class="col-xl-1">
+                        <span><p>{{$former_employees}}</p></span>
                     </div>
             </div>
         </div>
         <div class="col-xl-6 col-lg-6">
             <div class="box-emp-contents">
-                    <div class="col-xl-3">
+                    <div class="col-xl-1">
                         <i class="fa-solid fa-user-minus"></i>
                     </div>
-                    <div class="col-xl-9">
-                        <span><p>Employees Summary<br>
-                            100
-                        </p></span>
+                    <div class="col-xl-10">
+                        <span><p>Pending Employees</p></span>
+                    </div>
+                    <div class="col-xl-1">
+                        <span><p>{{$pending_leave}}</p></span>
                     </div>
             </div>
         </div>
         <div class="col-xl-6 col-lg-6">
             <div class="box-emp-contents">
-                    <div class="col-xl-3">
+                    <div class="col-xl-1">
                         <i class="fa-solid fa-user-minus"></i>
                     </div>
-                    <div class="col-xl-9">
-                        <span><p>Take Leave<br>
-                            5
-                        </p></span>
+                    <div class="col-xl-10">
+                        <span><p>All Employees</p></span>
+                    </div>
+                    <div class="col-xl-1">
+                        <span><p>{{$employees}}</p></span>
+                    </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+            <div class="box-emp-contents">
+                    <div class="col-xl-1">
+                        <i class="fa-solid fa-user-minus"></i>
+                    </div>
+                    <div class="col-xl-10">
+                        <span><p>TakeLeave Employees</p></span>
+                    </div>
+                    <div class="col-xl-1">
+                        <span><p>{{$take_leave}}</p></span>
                     </div>
             </div>
         </div>
@@ -97,41 +101,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="box-td">project 1</td>
-                            <td>2020-04-10</td>
-                            <td>2020-05-10</td>
-                        </tr>
-                        <tr>
-                            <td class="box-td">project 2</td>
-                            <td>2020-04-10</td>
-                            <td>2020-05-10</td>
-                        </tr>
-                        <tr>
-                            <td class="box-td">project 3</td>
-                            <td>2020-04-10</td>
-                            <td>2020-05-10</td>
-                        </tr>
-                        <tr>
-                            <td class="box-td">project 4</td>
-                            <td>2020-04-10</td>
-                            <td>2020-05-10</td>
-                        </tr>
-                        <tr>
-                            <td class="box-td">project 5</td>
-                            <td>2020-04-10</td>
-                            <td>2020-05-10</td>
-                        </tr>
-                        <tr>
-                            <td class="box-td">project 6</td>
-                            <td>2020-04-10</td>
-                            <td>2020-05-10</td>
-                        </tr>
-                        <tr>
-                            <td class="box-td">project 7</td>
-                            <td>2020-04-10</td>
-                            <td>2020-05-10</td>
-                        </tr>
+                        
+                        @foreach ($project_runnings as $key => $project_run )
+                            @include('dashboards._project_running')
+                        @endforeach
+
                     </tbody>
                 </table>
             </div>

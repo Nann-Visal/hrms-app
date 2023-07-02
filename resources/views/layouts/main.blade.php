@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <!-- bootstrap style -->
     <link rel="stylesheet" href="/bootstrap-5.3.0-alpha3-dist/css/bootstrap.css">
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -21,12 +20,16 @@
         <img id="img-web" src="/assets/images/icons/ic_web.png" alt="">
         <div class="container-fluid">
             <div class="box-username">
-                <p id="txt-username">J.Bonapha</p>
+                <p id="txt-username">{{Auth::user()->name??'Not Signin'}}</p>
                 <div class="sub-menu">
-                    <ul>
-                        <li><a href="{{url('/signin')}}">Log Out</a></li>
-                        <li><a href="#">Admin</a></li>
-                    </ul>
+                    <div class="card bg-warning">
+                        <div class="card-body">
+                            <form action="{{route('logout')}}" method="POST" style="display: inline;">
+                                @csrf
+                                <button class="btn btn-warning" onclick="location.href='{{route('login')}}'">Log Out</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="box-dropmn">
@@ -39,49 +42,45 @@
     <!-- start sidebar -->
     <div class="box-sidebar">
             <ul>
-                <li ><a href="{{url('/dashboard')}}" class=" {{Request::path() == '/dashboard' ? 'item-active' : ''}} ">
+                <li ><a href="{{url('/')}}" class=" {{Request::path() == '/' ? 'item-active' : ''}} ">
                     <i class="fa-solid fa-gauge"></i>
                     <span>Dashboard</span>
                 </a></li>
-                <li><a href="{{url('/departments')}}" class=" {{Request::path() == '/departments' ? 'item-active' : ''}} " >
-                    <i class="fa-brands fa-delicious"></i>
-                    <span>Departments</span>
-                </a></li>
-                <li><a href="{{url('/projects')}}" class=" {{Request::path() == '/ptojects' ? 'item-active' : ''}} " >
+                <li><a href="{{url('/projects')}}" class=" {{Request::path() == 'projects' ? 'item-active' : ''}} " >
                     <i class="fa-solid fa-layer-group"></i>
                     <span>Projects</span>
                 </a></li>
-                <li><a href="{{url('/tasks')}}" class=" {{Request::path() == '/tasks' ? 'item-active' : ''}} " >
+                <li><a href="{{url('/tasks')}}" class=" {{Request::path() == 'tasks' ? 'item-active' : ''}} " >
                     <i class="fa-solid fa-bars-progress"></i>
                     <span>Tasks</span>
                 </a></li>
-                <li><a href="{{url('/employees')}}" class=" {{Request::path() == '/employees' ? 'item-active' : ''}} " >
+                <li><a href="{{url('/employees')}}" class=" {{Request::path() == 'employees'  ? 'item-active' : ''}} " >
                     <i class="fa-solid fa-people-arrows"></i>
                     <span>Employees</span>
                 </a></li>
-                <li><a href="{{url('/takeleaves')}}" class=" {{Request::path() == '/takeleaves' ? 'item-active' : ''}} " >
+                <li><a href="{{url('/takeleaves')}}" class=" {{Request::path() == 'takeleaves' ? 'item-active' : ''}} " >
                     <i class="fa-solid fa-person-walking-arrow-right"></i>
                     <span>Take Leaves</span>
                 </a></li>
-                <li><a href="{{url('/pendingleaves')}}" class=" {{Request::path() == '/pendingleaves' ? 'item-active' : ''}} " >
+                <li><a href="{{url('/pendingleaves')}}" class=" {{Request::path() == 'pendingleaves' ? 'item-active' : ''}} " >
                     <i class="fa-solid fa-arrow-trend-down"></i>
                     <span>Pending Leaves</span>
                 </a></li>
-                <li><a href="{{url('/attendants')}}" class=" {{Request::path() == '/attendats' ? 'item-active' : ''}} " >
+                <li><a href="{{url('/attendants')}}" class=" {{Request::path() == 'attendants' ? 'item-active' : ''}} " >
                     <i class="fa-solid fa-clipboard-user"></i>
                     <span>Attendants</span>
                 </a></li>
-                <li><a href="{{url('/events')}}" class=" {{Request::path() == '/events' ? 'item-active' : ''}} ">
+                <li><a href="{{url('/events')}}" class=" {{Request::path() == 'events' ? 'item-active' : ''}} ">
                     <i class="fa-solid fa-calendar"></i>
                     <span>Events</span>
                 </a></li>
 
-                <li><a href="{{url('/payments')}}" class=" {{Request::path() == '/payments' ? 'item-active' : ''}} ">
+                <li><a href="{{url('/payments')}}" class=" {{Request::path() == 'payments' ? 'item-active' : ''}} ">
                     <i class="fa-solid fa-credit-card"></i>
                     <span>Payments</span>
                 </a></li>
 
-                <li><a href="{{url('/overtimes')}}" class=" {{Request::path() == '/overtimes' ? 'item-active' : ''}} ">
+                <li><a href="{{url('/overtimes')}}" class=" {{Request::path() == 'overtimes' ? 'item-active' : ''}} ">
                     <i class="fa-solid fa-business-time"></i>
                     <span>Overtime</span>
                 </a></li>
@@ -98,6 +97,6 @@
     <script src="/bootstrap-5.3.0-alpha3-dist/js/bootstrap.js"></script>
     <script src="/assets/jquery.js"></script>
     <script src="/assets/js/jaction.js"></script>
+
 </body>
-@yield('modal')
 </html>

@@ -230,12 +230,12 @@ div{
 }
 .box-emp-contents{
     width: 100%;
-    height: 50px;
+    height: 150px;
     margin-top: 16px;
-    position: relative;
+    padding:16px;
+    position:relative;
     border: none;
-    display: flex;
-    padding: 16px;
+    display:flex;
     align-items: center;
     border-radius: 8px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -248,13 +248,13 @@ div{
 }
 .box-emp-contents div i{
     font-size: 50px;
-    position: absolute;
+    text-align: center;
     color: white;
 }
 .box-emp-contents div span p{
     text-align: center;
-    position: absolute;
     font-size: 45px;
+    direction: rtl;
     color: white;
 }
 .box-dsh-project-running{
@@ -283,162 +283,24 @@ div{
 *:focus{
     outline: none;
 }
-.box-project-input{
-    width: 100%;
-    height: fit-content;
-    position: absolute;
-}
-.box-project-input form .row div .box-label{
-    margin-left: 25px;
-    font-size: 20pt;
-    color: black;
-}
-.box-project-input form .row div .box-input{
-    text-align: center;
-    width: 90%;
-    height: 50px;
-    background-color: white;
-    margin: 0 25px 0px;
-    font-size: 20pt;
-    border-radius: 3px;
-    border:none;
-    padding: 10px;
-    box-shadow: 0px 5px 15px #8888888d;
-}
-.box-project-input form .row div .box-input-description{
-    width: 95%;
-    height: 250px;
-    max-height: 250px;
-    background-color: white;
-    margin: 0 25px 0px;
-    font-size: 20pt;
-    border-radius: 3px;
-    border:none;
-    padding: 10px;
-    box-shadow: 0px 5px 15px #8888888d;
-}
-.box-project-input .row div .box-search{
-    text-align: left;
-    width: 95%;
-    height: 50px;
-    background-color: white;
-    margin: 16px 25px 16px;
-    font-size: 20pt;
-    border-radius: 3px;
-    border:none;
-    display: inline-flex;
-    padding: 10px;
-    align-items: center;
-    box-shadow: 0px 5px 15px #8888888d;
-}
-.box-project-input .row div .box-search  input{
-    height: 50px;
-    width:95%;
-    border: none;
-}
-.box-project-input .row div .box-search button{
-    border-style: none;
-    background: none;
-    transition: 0.5s;
-}
-.box-project-input .row div .box-search button:hover{
-    transform: scale(1.3);
-}
-.box-project-input .row div  .box-action{
-    height: 50px;
-    width: 100%;
-    margin: 16px 75px 16px;
-    border-style: none;
-    border-radius: 3px;
-    font-size: 20pt;
-    color: white;
-    transition: 0.5s;
-}
-.box-project-input .row div #btn-refresh{
-    background-color:#5612D6;
-}
-.box-project-input .row div #btn-cancel{
-    background-color: #f4b805;
-}
-.box-project-input .row div #btn-save{
-    background-color: #0360ff;
-}
-.box-project-input .row div  .box-action:hover{
-    transform: scale(1.05);
-    opacity: 0.8;
-}
-.box-project-input .card-project{
-    position: relative;
-    width: 96%;
-    height: fit-content;
-}
-.box-project-input .box-card-project{
-    cursor: pointer;
-    width: 100%;
-    height: 150px;
-    margin: 25px 25px 0px;
-    padding: 0 10px 0;
-    border-radius: 8px;
-    box-shadow: 5px 5px 15px 10px #88888829;;
-}
-.box-card-project .row div h6{
-    margin-top: 16px;
-    margin-left: 16px;
-    font-size: 20pt;
-}
-.box-card-project .row div i{
-    margin-top: 16px;
-    font-size: 20pt;
-}
-.box-card-project .row div #id-txt-title{
-    margin-left: 16px;
-    color: grey;
-    font-size: 15pt;
-}
-.box-card-project .row div #id-txt-progress{
-    direction: rtl;
-    margin-top: 6px;
-    margin-right: 20px;
-    color: grey;
-    font-size: 15pt;
-}
-.box-card-project .box-progress{
-    display: block;
-    margin-left: 16px;
-    margin-top: 32px;
-    margin-bottom: 16px;
-    width: 90%;
-    height: 6px;
-    border-radius: 2px;
-    background-color:gray;
-}
-.box-card-project .box-progress .box-progressbar{
-    position: relative;
-    width: 64%;
-    height: 100%;
-    border-radius: 2px;
-    background-color: #0dff00;
-}
 .box-table{
     width: 100%;
     height: fit-content;
     position: relative;
-    margin: 25px;
-    padding-right: 6rem;
 }
-.box-table .table thead{
+.table thead{
     background-color: #5612D6;
 }
-.box-table .table thead tr th{
+.table thead tr th{
     text-align: center;
     font-size: 16pt;
     color: white;
 }
-.box-table .table tbody tr td{
+.table tbody tr td{
     text-align: center;
     font-size: 16pt;
 }
-.box-table .table tbody tr td button{
+.table tbody tr td button{
     border-style: none;
     color: white;
     width: 150px;
@@ -447,180 +309,12 @@ div{
     border-radius: 3px;transition: 0.3s;
 
 }
-.box-table .table tbody tr td #btn-detail{
-    background-color: #0061ff;
-}
-.box-table .table tbody tr td #btn-edit{
-    background-color: #f7b409;
-}
-.box-table .table tbody tr td #btn-deleted{
-    background-color: #ff0008;
-}
-.box-table .table tbody tr td button:hover{
-  opacity: 0.8;
-  transform: scale(1.05);
-}
-.box-header-modal{
-    height: 100px;
-    width: 600px;
-    background-color: #5612D6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-.box-header-modal h5{
-    font-size: 27pt;
-}
-.box-body-modal{
-    width: 600px;
-    background-color: white;
-    height: fit-content;
-}
-.box-footer-modal{
-    width: 600px;
-    height: fit-content;
-    background-color:white;
-}
-.box-footer-modal .btn-action-depa{
-    font-size: 16pt;
-    width: 150px;
-    height: 40px;
-    border-radius: 3px;
-    color: white;
-    border: none;
-}
-.box-footer-modal .btn-action-depa:hover{
-    opacity: 0.8;
-}
-.box-footer-modal #btn-action-close{
-    background-color:grey;
+.table tbody tr td a{
+    font-size: 27px;
 }
 /* end project list */
 
 /* start task list */
-.form-task-input .row div .box-txt-taskname{
-    font-size: 20pt;
-}
-.form-task-input .row div .box-input-taskname{
-    text-align: center;
-    width: 100%;
-    height: 50px;
-    background-color: white;
-    font-size: 20pt;
-    border-radius: 3px;
-    border:none;
-    padding: 10px;
-    box-shadow: 0px 5px 15px #8888888d;
-}
-.form-task-input .row div .box-textarea-taskname{
-    width: 100%;
-    height: 350px;
-    max-height: 350px;
-    background-color: white;
-    font-size: 20pt;
-    border-radius: 3px;
-    border:none;
-    padding: 10px;
-    box-shadow: 0px 5px 15px #8888888d;
-}
-.form-task-input .row div .box-input-responsible{
-    width: 100%;
-    position: relative;
-    height: 350px;
-    display: inline-block;
-    overflow: auto;
-    max-height: 350px;
-    background-color: white;
-    font-size: 20pt;
-    border-radius: 3px;
-    border:none;
-    padding: 10px;
-    box-shadow: 0px 5px 15px #8888888d;
-}
-.form-task-input .row div .box-input-responsible .box-items-responsible{
-    width: 100%;
-    display: inline-flex;
-    height: 50px;
-    padding: 0 16px 0;
-    align-items: center;
-    position:relative;
-    box-sizing: border-box;
-}
-.form-task-input .row div .box-input-responsible .box-items-responsible div img{
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-.form-task-input .row div .box-input-responsible .box-items-responsible div h5{
-    font-size: 16pt;
-    margin-top: 6px;
-    direction: ltr;
-}
-.form-task-input .row div .box-input-responsible .box-items-responsible div p{
-    font-size: 15pt;
-    color: grey;
-    direction: rtl;
-}
-.form-task-input .row div .box-input-responsible .box-items-responsible div input{
-    margin-top: 6px;
-    width: 35px;
-    height: 35px;
-    margin-left: 25px;
-}
-.box-search{
-    text-align: left;
-    width: 100%;
-    height: 50px;
-    background-color: white;
-    margin: 16px 0px 16px;
-    font-size: 20pt;
-    border-radius: 3px;
-    border:none;
-    display: inline-flex;
-    padding: 10px;
-    align-items: center;
-    box-shadow: 0px 5px 15px #8888888d;
-}
-.box-search  input,select{
-    text-align: center;
-    height: 50px;
-    width:100%;
-    border: none;
-    background-color: white;
-}
-.box-search button{
-    border-style: none;
-    background: none;
-    transition: 0.5s;
-}
-.box-search button:hover{
-    transform: scale(1.3);
-}
-.box-action{
-    height: 50px;
-    width: 100%;
-    margin: 8px 0px 8px;
-    border-style: none;
-    border-radius: 3px;
-    font-size: 20pt;
-    color: white;
-    transition: 0.5s;
-}
-.row div #btn-refresh{
-    background-color:#5612D6;
-}
-.row div #btn-cancel{
-    background-color: #f4b805;
-}
-.row div #btn-save{
-    background-color: #0360ff;
-}
-.row div  .box-action:hover{
-    transform: scale(1.05);
-    opacity: 0.8;
-}
 .box-card{
     position:absolute;
     margin-top: 16px;
@@ -678,13 +372,7 @@ div{
     padding-left: -20px;
     margin-right: 6px;
 }
-.box-card .box-items .box-img img{
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    margin-left: -20px;
-    padding-left: -6px;
-}
+
 .box-card .box-items .box-button{
     margin-top: 8px;
     text-align: center;
@@ -713,67 +401,6 @@ div{
     transform: scale(1.05);
     opacity: 0.8;
 }
-
-.box-header-modal-task{
-    height: 100px;
-    width: 600px;
-    background-color: #0061ff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-.box-header-modal-task h5{
-    font-size: 27pt;
-}
-.box-body-modal-task{
-    width: 600px;
-    background-color: white;
-    height: fit-content;
-}
-.box-body-modal-task .box-modal-employees{
-    width: 100%;
-    height: 150px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-.box-body-modal-task .box-modal-employees-items{
-    width: 100%;
-    height: 50px;
-    min-height: 50px;;
-    position: relative;
-    display: flex;
-    border-radius: 3px;
-    margin-bottom: 6px;
-    align-items: center;
-    background-color: rgba(128, 128, 128, 0.162);
-}
-.box-body-modal-task .box-modal-employees-items img{
-    width: 45px;
-    height: 45px;
-    margin-left: 6px;
-    border-radius: 50%;
-    margin-right: 25%;
-}
-.box-footer-modal-task{
-    width: 600px;
-    height: fit-content;
-    background-color:white;
-}
-.box-footer-modal-task .btn-action-depa{
-    font-size: 16pt;
-    width: 150px;
-    height: 40px;
-    border-radius: 3px;
-    color: white;
-    border: none;
-}
-.box-footer-modal-task .btn-action-depa:hover{
-    opacity: 0.8;
-}
-.box-footer-modal-task #btn-action-close{
-    background-color:grey;
-}
 .box-table-depa{
     margin-top: 24rem;
     position:absolute;
@@ -795,229 +422,7 @@ div{
 }
 /* end task list */
 
- /* start departments */
- .box-depa-form .row div label{
-    font-size: 20pt;
- }
- .box-depa-form .row div .box-input{
-    width: 100%;
-    height: 50px;
-    border: none;
-    border-radius: 3px;
-    background-color: white;
-    text-align: center;
-    font-size: 20pt;
-    box-shadow: 3px 3px 15px #8888888d;
- }
- .box-depa-form .row div .box-textarea{
-    width: 100%;
-    height: 350px;
-    max-height: 350px;
-    background-color: white;
-    padding: 16px;
-    border: none;
-    border-radius: 3px;
-    font-size: 16pt;
-    box-shadow: 3px 3px 15px #8888888d;
- }
-.box-employee{
-    width: 100%;
-    height: 350px;
-    background: none;
-    max-height: 350px;
-    padding: 16px;
-    background-color: white;
-    border: none;
-    position:relative;
-    display:inline-block;
-    overflow: auto;
-    border-radius: 3px;
-    box-shadow: 3px 3px 15px #8888888d;
- }
- .box-depa-form .row div .box-employee .box-items{
-    width: 100%;
-    display: inline-flex;
-    height: 50px;
-    align-items: center;
-    position:relative;
-    border-radius: 3px;
-    box-sizing: border-box;
-    margin-bottom: 6px;
- }
- .box-depa-form .row div .box-employee .box-items div img{
-    width: 45px;
-    height: 45px;
-    object-fit: cover;
-    border-radius: 50%;
- }
- .box-depa-form .row div .box-employee .box-items div h5{
-    margin-top: 8px;
-    margin-left: 25%;
-    font-size: 16pt;
- }
- .box-depa-form .row div .box-employee .box-items div p{
-    margin-left: 25%;
-    color: grey;
-    font-size: 13pt;
- }
- .box-depa-form .row div .box-employee .box-items div input{
-    margin-top: 6px;
-    width: 35px;
-    height: 35px;
-    margin-left: 25%;
- }
- .row div .box-depa-items{
-    margin-top: 16px;
-    width: 90%;
-    height: 380px;
-    border: none;
-    border-radius: 16px;
-    position: relative;
-    display: block;
-    cursor: pointer;
-    text-align: center;
-    box-sizing: border-box;
-    box-shadow: 3px 3px 15px #8888888d;
-    background-image: linear-gradient(to right,#00ff87,#60efff);
-    transition: 0.5s;
-}
- .row div .box-depa-items:hover{
-    transform: scale(1.05);
- }
- .row div .box-depa-items h5{
-    font-size: 25pt;
-    color: white;
- }
- .row div .box-depa-items img{
-    margin-top: 16px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
- }
- .row div .box-depa-items p{
-    margin-top: 16px;
-    color: white;
-    font-size: 16pt;
-    direction: rtl;
- }
- .row div .box-depa-items .box-depa-action{
-    position: absolute;
-    display:block;
-    width: 100%;
-    height: 140px;
-    background-color: white;
-    border-radius:  0 0 16px 16px;
-    bottom: 0;
- }
- .row div .box-depa-items .box-depa-action p{
-    color: black;
-    font-size: 13pt;
- }
- .row div .box-depa-items .box-depa-action .btn-view-depa{
-    width: 250px;
-    height: 40px;
-    margin-top: 6px;
-    border-radius: 3px;
-    border: none;
-    font-size: 13pt;
-    color: white;
-    background-color: #5712d6d3;
-    transition: 0.5s;
- }
- .row div .box-depa-items .box-depa-action .btn-view-depa:hover{
-    opacity: 0.8;
-    transform: scale(1.05);
- }
-
- .box-header-modal-depa{
-    height: 150px;
-    width: 600px;
-    background-color:#5712d6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-.box-header-modal-depa h5{
-    font-size: 27pt;
-}
-.box-body-modal-depa{
-    width: 600px;
-    background-color: white;
-    height: fit-content;
-}
-.box-body-modal-depa .box-modal-employees{
-    width: 100%;
-    height: 150px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-.box-body-modal-depa #box-modal-advisor-items{
-    color: white;
-    background-color: #5712d6;
-}
-.box-body-modal-depa .box-modal-employees-items{
-    width: 100%;
-    height: 50px;
-    min-height: 50px;;
-    position: relative;
-    display: flex;
-    border-radius: 3px;
-    margin-bottom: 6px;
-    align-items: center;
-    background-color: rgba(128, 128, 128, 0.162);
-}
-.box-body-modal-depa .box-modal-employees-items img{
-    width: 45px;
-    height: 45px;
-    object-fit: cover;
-    margin-left: 6px;
-    border-radius: 50%;
-    margin-right: 25%;
-}
-.box-footer-modal-depa{
-    width: 600px;
-    height: fit-content;
-    background-color:white;
-}
-.box-footer-modal-depa .btn-action-depa{
-    font-size: 16pt;
-    width: 150px;
-    height: 40px;
-    border-radius: 3px;
-    color: white;
-    border: none;
-}
-.box-footer-modal-depa .btn-action-depa:hover{
-    opacity: 0.8;
-}
-.box-footer-modal-depa #btn-action-delete{
-    background-color: #ff0008;
-}
-.box-footer-modal-depa #btn-action-edit{
-    background-color:#f9bc2c;
-}
-.box-footer-modal-depa #btn-action-close{
-    background-color:grey;
-}
- /* end departments */
-
  /* start employees */
- .box-employee-form .row div label{
-    font-size: 20pt;
- }
- .box-employee-form .row div .box-input{
-    cursor: pointer;
-    width: 100%;
-    height: 50px;
-    border: none;
-    border-radius: 3px;
-    background-color: white;
-    text-align: center;
-    font-size: 20pt;
-    box-shadow: 3px 3px 15px #8888888d;
- }
  .row div .box-employees{
     margin-top: 16px;
     width: 95%;
@@ -1081,52 +486,6 @@ div{
     opacity: 0.8;
  }
 
- .box-header-modal-employees{
-    height: 200px;
-    width: 600px;
-    background-color:#5712d6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-.box-header-modal-employees img{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-.box-body-modal-employees{
-    width: 600px;
-    background-color: white;
-    height: fit-content;
-}
-
-.box-footer-modal-employees{
-    width: 600px;
-    height: fit-content;
-    background-color:white;
-}
-.box-footer-modal-employees .btn-action-depa{
-    font-size: 16pt;
-    width: 150px;
-    height: 40px;
-    border-radius: 3px;
-    color: white;
-    border: none;
-}
-.box-footer-modal-employees .btn-action-depa:hover{
-    opacity: 0.8;
-}
-.box-footer-modal-employees #btn-action-delete{
-    background-color: #ff0008;
-}
-.box-footer-modal-employees #btn-action-edit{
-    background-color:#f9bc2c;
-}
-.box-footer-modal-employees #btn-action-close{
-    background-color:grey;
-}
  /* end employees */
 
  /* start take-leave */
@@ -1287,148 +646,12 @@ div{
     margin-right: -20px;
     object-fit: cover;
  }
- .box-header-modal-event{
-    height: 100px;
-    background-color:#0077fff3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-.box-header-modal-event h5{
-    font-size: 27pt;
-}
-.box-body-modal-event{
-    width: 100%;
-    height: fit-content;
-    background-color: white;
-    position: relative;
-}
-.box-body-modal-event .box-slash{
-    margin-left: 50%;
-    width: 2px;
-    border-radius: 50%;
-    height: 100%;
-    background-color: rgb(157, 157, 157);
-}
-.box-body-modal-event .row div .box-desc{
-    width: 100%;
-    height: fit-content;
-    display: block;
-    text-align: center;
-}
-.box-footer-modal-event{
-    height: fit-content;
-    background-color:white;
-}
-.box-footer-modal-event .btn-action-event{
-    font-size: 16pt;
-    width: 150px;
-    height: 40px;
-    border-radius: 3px;
-    color: white;
-    border: none;
-    background-color: gray;
-}
-.box-footer-modal-event .btn-action-event:hover{
-    opacity: 0.8;
-}
  /* end events */
 
  /* start payments */
- .box-table-attendants tbody tr td button {
-    width: 150px;
-    height: 35px;
-    color: white;
-    font-size: 15pt;
-    border: none;
-    border-radius: 3px;
- }
- .box-table-attendants tbody tr td button:hover{
-    opacity: 0.7;
- }
- .box-table-attendants tbody tr td #btn-paid{
-    background-color: #0061ff;
- }
- .box-table-attendants tbody tr td #btn-unpaid{
-    background-color:#ff0008;
- }
- .box-body-modal-payment{
-    z-index: 99;
-    position: relative;
-    width: 100%;
-    padding-left: 16px;
-    padding-bottom: 16px;
-    padding-right: 16px;
-    height: fit-content;
-    min-height: 500px;
-    font-size: 14pt;
-    border-radius: 6px;
-    background-image: url('/assets/images/icons/ic_web.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
- }
- .box-body-modal-payment .btn-action-payments{
-    width: 150px;
-    height: 40px;
-    position: absolute;
-    margin-left: 85.5%;
-    color: white;
-    font-size: 15pt;
-    border: none;
-    border-radius: 3px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: gray;
- }
- .box-body-modal-payment .btn-action-payments:hover{
-    opacity: 0.8;
- }
- .box-body-modal-payment .box-slash{
-    margin-top: 16px;
-    margin-left: 50%;
-    width: 3px;
-    height: 95%;
-    background-color: rgb(157, 157, 157);
-}
-
-.box-body-modal-payment .box-desc{
-    margin-top: 25%;
-    width: 100%;
-    height:fit-content;
-    position: relative;
-    direction: rtl;
-    display: flex;
-    align-items: center;
-}
-.box-body-modal-payment .box-back-paid{
-    width: 500px;
-    height: 60px;
-    margin-left: 25%;
-    margin-top: 26%;
-    position: absolute;
-    background-color:rgba(246, 209, 4, 0.847);
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    font-size: 25pt;
-    align-items: center;
-    justify-content: center;
-    object-fit: cover;
-}
-.box-body-modal-payment .box-back-paid:hover{
-    opacity: 0.9;
-}
  /* end payments */
 
  /* start overtime */
-.box-table-attendants tbody tr td  #btn-edit{
-    background-color: #f7b409;
-}
-.box-table-attendants tbody tr td  #btn-delet{
-    background-color:#ff0008;
-}
  /* end overtime */
 
 /* start main auth */

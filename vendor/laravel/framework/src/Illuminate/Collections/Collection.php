@@ -374,7 +374,7 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
     /**
      * Run a filter over each of the items.
      *
-     * @param (callable(TValue, TKey): bool)|null  $callback
+     * @param  (callable(TValue, TKey): bool)|null  $callback
      * @return static
      */
     public function filter(callable $callback = null)
@@ -816,17 +816,7 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
      */
     public function mapWithKeys(callable $callback)
     {
-        $result = [];
-
-        foreach ($this->items as $key => $value) {
-            $assoc = $callback($value, $key);
-
-            foreach ($assoc as $mapKey => $mapValue) {
-                $result[$mapKey] = $mapValue;
-            }
-        }
-
-        return new static($result);
+        return new static(Arr::mapWithKeys($this->items, $callback));
     }
 
     /**
