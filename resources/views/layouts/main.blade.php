@@ -20,7 +20,7 @@
         <img id="img-web" src="/assets/images/icons/ic_web.png" alt="">
         <div class="container-fluid">
             <div class="box-username">
-                <p id="txt-username">{{Auth::user()->name??'Not Signin'}}</p>
+                <p id="txt-username">{{Auth::user()->name??'Test User'}}</p>
                 <div class="sub-menu">
                     <div class="card bg-warning">
                         <div class="card-body">
