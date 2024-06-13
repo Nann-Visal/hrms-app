@@ -11,8 +11,9 @@ class TaskController extends Controller
 {
     //index
     public function index(){
-        $tasks = Task::orderby('id','desc')->get();
-        return view('tasks.index-task',['tasks' => $tasks]);
+        $tasks = Task::orderby('id','desc')->latest()->limit(15)->get();
+        $projects = Project::whereHas('tasks')->pluck('project_name','id');
+        return view('tasks.index-task',['tasks' => $tasks,'projects' => $projects]);
     }
     //create
     public function create(){

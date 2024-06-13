@@ -10,8 +10,10 @@ class OverTimeController extends Controller
 {
     //index
     public function index(){
-        $overtimes = OverTime::orderby('id','desc')->get();
-        return view('overtimes.index',['overtimes'=>$overtimes]);
+        $overtimes = OverTime::orderby('id','desc')->latest()->limit(15)->get();
+        $employees_id = OverTime::pluck('employee_id');
+        $employees = Employees::whereIn('id', $employees_id)->pluck('full_name', 'id');
+        return view('overtimes.index',['overtimes'=>$overtimes, 'employees' => $employees]);
     }
     //create
     public function create(){

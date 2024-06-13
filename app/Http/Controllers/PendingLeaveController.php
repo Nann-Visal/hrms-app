@@ -10,7 +10,7 @@ class PendingLeaveController extends Controller
 {
     //index
     public function index(){
-        $pendingleaves = PendingLeave::orderby('id','desc')->get();
+        $pendingleaves = PendingLeave::orderby('id','desc')->latest()->limit(15)->get();
         return view('pendingleaves.index-pendingleaves',['pendingleaves'=> $pendingleaves]);
     }
     //create

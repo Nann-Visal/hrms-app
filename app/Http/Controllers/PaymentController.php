@@ -10,8 +10,10 @@ class PaymentController extends Controller
 {
     //index
     public function index(){
-        $payments = Payment::orderby('id','desc')->get();
-        return view('payments.index',['payments'=>$payments]);
+        $payments = Payment::orderby('id','desc')->latest()->limit(15)->get();
+        $employees_id = Payment::pluck('employee_id');
+        $employees = Employees::whereIn('id', $employees_id)->pluck('full_name', 'id');
+        return view('payments.index',['payments'=>$payments, 'employees' => $employees]);
     }
     //show
     public function show($id){

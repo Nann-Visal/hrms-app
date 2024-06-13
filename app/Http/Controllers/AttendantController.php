@@ -10,8 +10,10 @@ class AttendantController extends Controller
 {
     //index
     public function index(){
-        $attendants = Attendants::orderby('id','desc')->get();
-        return view('attendants.index-attendants',['attendants'=>$attendants]);
+        $attendants = Attendants::orderby('id','desc')->latest()->limit(15)->get();
+        $employees_id = Attendants::pluck('employee_id');
+        $employees = Employees::whereIn('id', $employees_id)->pluck('full_name', 'id');
+        return view('attendants.index-attendants',['attendants'=>$attendants, 'employees' => $employees]);
     }
     //create
     public function create(){

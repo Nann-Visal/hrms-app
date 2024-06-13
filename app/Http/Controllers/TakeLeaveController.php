@@ -10,7 +10,7 @@ class TakeLeaveController extends Controller
 {
     //index
     public function index(){
-        $takeleaves = TakeLeave::orderby('id','desc')->get();
+        $takeleaves = TakeLeave::orderby('id','desc')->latest()->limit(15)->get();
         return view('takeleaves.index-takeleaves',['takeleaves'=> $takeleaves]);
     }
     public function create(){

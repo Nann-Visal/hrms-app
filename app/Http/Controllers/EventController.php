@@ -10,8 +10,10 @@ class EventController extends Controller
 {
     //index
     public function index(){
-        $events = Event::orderby('id','desc')->get();
-        return view('events.index',['events'=>$events]);
+        $events = Event::orderby('id','desc')->latest()->limit(15)->get();
+        $employees_id = Event::pluck('employee_id');
+        $employees = Employees::whereIn('id', $employees_id)->pluck('full_name', 'id');
+        return view('events.index',['events'=>$events, 'employees' => $employees]);
     }
     //create
     public function create(){

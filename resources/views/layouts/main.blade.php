@@ -41,48 +41,52 @@
     <!-- end header -->
     <!-- start sidebar -->
     <div class="box-sidebar">
+            @php
+                $route_name = Request::route()->getName();
+            @endphp
             <ul>
                 <li ><a href="{{url('/')}}" class=" {{Request::path() == '/' ? 'item-active' : ''}} ">
                     <i class="fa-solid fa-gauge"></i>
                     <span>Dashboard</span>
                 </a></li>
-                <li><a href="{{url('/projects')}}" class=" {{Request::path() == 'projects' ? 'item-active' : ''}} " >
+                <hr>
+                <li><a href="{{url('/projects')}}" class=" {{Str::startsWith($route_name, 'projects')  ? 'item-active' : ''}} " >
                     <i class="fa-solid fa-layer-group"></i>
                     <span>Projects</span>
                 </a></li>
-                <li><a href="{{url('/tasks')}}" class=" {{Request::path() == 'tasks' ? 'item-active' : ''}} " >
+                <li><a href="{{url('/tasks')}}" class=" {{Str::startsWith($route_name, 'tasks')  ? 'item-active' : ''}} " >
                     <i class="fa-solid fa-bars-progress"></i>
                     <span>Tasks</span>
                 </a></li>
-                <li><a href="{{url('/employees')}}" class=" {{Request::path() == 'employees'  ? 'item-active' : ''}} " >
-                    <i class="fa-solid fa-people-arrows"></i>
-                    <span>Employees</span>
-                </a></li>
-                <li><a href="{{url('/takeleaves')}}" class=" {{Request::path() == 'takeleaves' ? 'item-active' : ''}} " >
-                    <i class="fa-solid fa-person-walking-arrow-right"></i>
-                    <span>Take Leaves</span>
-                </a></li>
-                <li><a href="{{url('/pendingleaves')}}" class=" {{Request::path() == 'pendingleaves' ? 'item-active' : ''}} " >
-                    <i class="fa-solid fa-arrow-trend-down"></i>
-                    <span>Pending Leaves</span>
-                </a></li>
-                <li><a href="{{url('/attendants')}}" class=" {{Request::path() == 'attendants' ? 'item-active' : ''}} " >
-                    <i class="fa-solid fa-clipboard-user"></i>
-                    <span>Attendants</span>
-                </a></li>
-                <li><a href="{{url('/events')}}" class=" {{Request::path() == 'events' ? 'item-active' : ''}} ">
-                    <i class="fa-solid fa-calendar"></i>
-                    <span>Events</span>
-                </a></li>
-
-                <li><a href="{{url('/payments')}}" class=" {{Request::path() == 'payments' ? 'item-active' : ''}} ">
+                <li><a href="{{url('/payments')}}" class=" {{Str::startsWith($route_name, 'payments')  ? 'item-active' : ''}} ">
                     <i class="fa-solid fa-credit-card"></i>
                     <span>Payments</span>
                 </a></li>
 
-                <li><a href="{{url('/overtimes')}}" class=" {{Request::path() == 'overtimes' ? 'item-active' : ''}} ">
+                <li><a href="{{url('/overtimes')}}" class=" {{Str::startsWith($route_name, 'overtimes')  ?  'item-active' : ''}} ">
                     <i class="fa-solid fa-business-time"></i>
                     <span>Overtime</span>
+                </a></li>
+                <li><a href="{{url('/events')}}" class=" {{Str::startsWith($route_name, 'events')  ? 'item-active' : ''}} ">
+                    <i class="fa-solid fa-calendar"></i>
+                    <span>Events</span>
+                </a></li>
+                <hr>
+                <li><a href="{{url('/employees')}}" class=" {{Str::startsWith($route_name, 'employees')  ? 'item-active' : ''}} " >
+                    <i class="fa-solid fa-people-arrows"></i>
+                    <span>Employees</span>
+                </a></li>
+                <li><a href="{{url('/takeleaves')}}" class=" {{Str::startsWith($route_name, 'takeleaves')  ? 'item-active' : ''}} " >
+                    <i class="fa-solid fa-person-walking-arrow-right"></i>
+                    <span>Take Leaves</span>
+                </a></li>
+                <li><a href="{{url('/pendingleaves')}}" class=" {{Str::startsWith($route_name, 'pendingleaves')  ? 'item-active' : ''}} " >
+                    <i class="fa-solid fa-arrow-trend-down"></i>
+                    <span>Pending Leaves</span>
+                </a></li>
+                <li><a href="{{url('/attendants')}}" class=" {{Str::startsWith($route_name, 'attendants')  ?  'item-active' : ''}} " >
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    <span>Attendants</span>
                 </a></li>
             </ul>
     </div>

@@ -9,7 +9,7 @@ class ProjetController extends Controller
 {
     //index
     public function index(){
-        $projects = Project::orderby('id','desc')->get();
+        $projects = Project::orderby('id','desc')->latest()->limit(15)->get();
         return view('projects.index-project',['projects'=> $projects]);
     }
     //show

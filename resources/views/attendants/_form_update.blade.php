@@ -61,7 +61,7 @@
         </div>
         <div class="col-xl-8 my-2"></div>
         <div class="col-xl-4 my-2">
-            <button type="submit" class="btn btn-outline-primary btn-lg" style="width: 250px; border-radius: 3px;"><i class="fa-solid fa-plus mx-3"></i> Save New</button>
+            <button type="submit" class="btn btn-outline-primary btn-lg" style="width: 250px; border-radius: 3px;"><i class="fa-solid fa-plus mx-3"></i> Save Edit</button>
             <button type="button" class="btn btn-outline-warning btn-lg" style="width: 250px; border-radius: 3px;" onclick="location.href='{{route('attendants.index-attendants')}}'"><i class="fa-solid fa-rectangle-xmark mx-2"></i> Cacel</button>
         </div>
     </div>

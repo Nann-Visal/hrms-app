@@ -11,7 +11,7 @@ class EmployeeController extends Controller
 {
     //index
     public function index(){
-        $employees = Employees::orderby('id','desc')->get();
+        $employees = Employees::orderby('id','desc')->latest()->limit(15)->get();
         return view('employees.index-employees',['employees'=> $employees]);
     }
     //create

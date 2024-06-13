@@ -5,7 +5,7 @@
             <h6 style="width:100%;height:40px; overflow:hidden;">{{$task->task_name}}</h6>
             <p> {{$task->project->project_name}}</p>
             <div class="box-img">
-                <img src="{{$task->employee->profile}}" style="width:60px; height:60px; border-radius:50%;" alt="">
+                <img src="{{$task->employee->profile}}" class="object-fit-cover" style="width:60px; height:60px; border-radius:50%;" alt="">
             </div>
         </span>
     </a>
