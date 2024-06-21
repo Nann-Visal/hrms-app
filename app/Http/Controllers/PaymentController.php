@@ -9,8 +9,12 @@ use App\Models\Employees;
 class PaymentController extends Controller
 {
     //index
-    public function index(){
-        $payments = Payment::orderby('id','desc')->latest()->limit(15)->get();
+    public function index(Request $request){
+        $payments = Payment::when(isset($request->date_pay) || (isset($request->employee_id) && $request->employee_id != ''), function($query) use($request) {
+            $query->orWhere('date_pay', $request->date_pay)
+            ->orWhere('employee_id', $request->employee_id);
+        })
+        ->orderby('id','desc')->latest()->limit(15)->get();
         $employees_id = Payment::pluck('employee_id');
         $employees = Employees::whereIn('id', $employees_id)->pluck('full_name', 'id');
         return view('payments.index',['payments'=>$payments, 'employees' => $employees]);

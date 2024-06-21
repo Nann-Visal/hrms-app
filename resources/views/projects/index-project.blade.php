@@ -8,7 +8,8 @@
                         <div class="row g-0">
                             <div class="col-md-12">
                                 <div class="card-body p-4 d-flex justify-content-start">
-                                    <form action="" class="col-8">
+                                    <form action="{{ route('projects.index-project') }}" class="col-8" method="GET">
+                                    @csrf
                                        <div class="row">
                                             <div class="col-3">
                                                 <label class="form-label" for="start_date">Start Date</label>
@@ -22,14 +23,15 @@
                                                 <label  class="form-label" for="project_status">Project Status</label>
                                                 <select class="form-select form-select-lg @error('project_status') is-invalid @enderror" name="project_status" id="project_status">
                                                     <option value="{{old('project_status')}}" selected>{{old('project_status')}}</option>
-                                                    <option value="New" selected>New</option>
+                                                    <option value="" selected>Select . . .</option>p
+                                                    <option value="New">New</option>
                                                     <option value="Running">Running</option>
                                                     <option value="Failed" >Failed</option>
                                                     <option value="Completed" >Completed</option>
                                                 </select>
                                             </div>
                                             <div class="col-3 pt-4">
-                                                <button type="button" class="btn btn-outline-primary btn-lg mt-2 " style="width: 150px;" onclick="" >Search</button>
+                                                <button type="submit" class="btn btn-outline-primary btn-lg mt-2 " style="width: 150px;" onclick="" >Search</button>
                                             </div>
                                        </div>
                                     </form>

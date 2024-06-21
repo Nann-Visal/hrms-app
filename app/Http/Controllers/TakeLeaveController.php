@@ -9,8 +9,13 @@ use App\Models\Employees;
 class TakeLeaveController extends Controller
 {
     //index
-    public function index(){
-        $takeleaves = TakeLeave::orderby('id','desc')->latest()->limit(15)->get();
+    public function index(Request $request){
+        $takeleaves = TakeLeave::when(isset($request->full_name), function ($query) use ($request) {
+            $query->whereHas('employee', function ($query) use ($request) {
+                $query->where('full_name', 'LIKE', '%'.$request->full_name.'%');
+            });
+        }
+        )->orderby('id','desc')->latest()->limit(15)->get();
         return view('takeleaves.index-takeleaves',['takeleaves'=> $takeleaves]);
     }
     public function create(){

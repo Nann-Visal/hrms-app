@@ -9,8 +9,12 @@ use Illuminate\Http\Request;
 class AttendantController extends Controller
 {
     //index
-    public function index(){
-        $attendants = Attendants::orderby('id','desc')->latest()->limit(15)->get();
+    public function index(Request $request){
+        $attendants = Attendants::when(isset($request->date) || (isset($request->employee_id) && $request->employee_id != ''), function($query) use($request) {
+            $query->orWhere('date', $request->date)
+            ->orWhere('employee_id', $request->employee_id);
+        })
+        ->orderby('id','desc')->latest()->limit(15)->get();
         $employees_id = Attendants::pluck('employee_id');
         $employees = Employees::whereIn('id', $employees_id)->pluck('full_name', 'id');
         return view('attendants.index-attendants',['attendants'=>$attendants, 'employees' => $employees]);

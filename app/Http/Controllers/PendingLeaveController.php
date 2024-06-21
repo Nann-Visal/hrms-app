@@ -9,8 +9,13 @@ use Illuminate\Http\Request;
 class PendingLeaveController extends Controller
 {
     //index
-    public function index(){
-        $pendingleaves = PendingLeave::orderby('id','desc')->latest()->limit(15)->get();
+    public function index(Request $request){
+        $pendingleaves = PendingLeave::when(isset($request->full_name), function ($query) use ($request) {
+            $query->whereHas('employee', function ($query) use ($request) {
+                $query->where('full_name', 'LIKE', '%'.$request->full_name.'%');
+            });
+        }
+        )->orderby('id','desc')->latest()->limit(15)->get();
         return view('pendingleaves.index-pendingleaves',['pendingleaves'=> $pendingleaves]);
     }
     //create

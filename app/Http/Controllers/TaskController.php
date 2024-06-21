@@ -10,8 +10,14 @@ use App\Models\Employees;
 class TaskController extends Controller
 {
     //index
-    public function index(){
-        $tasks = Task::orderby('id','desc')->latest()->limit(15)->get();
+    public function index(Request $request){
+        $tasks = Task::when(isset($request->start_date) || isset($request->end_date) || (isset($request->task_status) && $request->task_status != '' ) || isset($request->project_id) , function($query) use($request) {
+            $query->orWhere('start_date', $request->start_date)
+            ->orWhere('end_date', $request->end_date)
+            ->orWhere('task_status', $request->task_status)
+            ->orWhere('project_id', $request->project_id);
+        })
+        ->orderby('id','desc')->latest()->limit(15)->get();
         $projects = Project::whereHas('tasks')->pluck('project_name','id');
         return view('tasks.index-task',['tasks' => $tasks,'projects' => $projects]);
     }

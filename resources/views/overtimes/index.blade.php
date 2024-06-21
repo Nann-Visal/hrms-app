@@ -11,8 +11,8 @@
                                     <form action="" class="col-8">
                                         <div class="row">
                                              <div class="col-4">
-                                                 <label class="form-label" for="start_date">Date</label>
-                                                 <input class="form-control form-control-lg @error('start_date') is-invalid @enderror" value="{{old('start_date')}}" type="date"  name="start_date" id="start_date">
+                                                 <label class="form-label" for="date">Date</label>
+                                                 <input class="form-control form-control-lg @error('date') is-invalid @enderror" value="{{old('date')}}" type="date"  name="date" id="date">
                                              </div>
                                              <div class="col-4">
                                                 <label class="form-label" for="start_date">Employees</label>
@@ -29,7 +29,7 @@
                                                 @enderror
                                              </div>
                                              <div class="col-3 pt-4">
-                                                 <button type="button" class="btn btn-outline-primary btn-lg mt-2 " style="width: 150px;" onclick="" >Search</button>
+                                                 <button type="submit" class="btn btn-outline-primary btn-lg mt-2 " style="width: 150px;" onclick="" >Search</button>
                                              </div>
                                         </div>
                                      </form>
