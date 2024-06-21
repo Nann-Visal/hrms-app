@@ -8,7 +8,8 @@
                         <div class="row g-0">
                             <div class="col-md-12">
                                 <div class="card_footer p-4 d-flex justify-content-center">
-                                    <form action="" class="col-8">
+                                    <form action="{{ route('tasks.index-task')}}" id="form_filter" class="col-8" method="GET">
+                                        @csrf
                                         <div class="row">
                                              <div class="col-3">
                                                  <label class="form-label" for="start_date">Start Date</label>
@@ -44,8 +45,8 @@
                                             </div>
                                         </div>
                                      </form>
-                                     <div class="col-4 pt-4 d-flex justify-content-between">
-                                        <button type="button" class="btn btn-outline-primary btn-lg mt-2 " style="width: 150px;" onclick="" >Search</button>
+                                     <div class="col-4 pt-4 d-flex justify-content-between ms-1">
+                                        <button type="submit" class="btn btn-outline-primary btn-lg mt-2" id="btn_search" style="width: 150px;">Search</button>
                                         <button type="button" class="btn btn-outline-info btn-lg " style="width: 150px;" onclick="location.href='{{route('tasks.create')}}'" >ADD NEW</button>
                                      </div>
                                 </div>
@@ -92,3 +93,11 @@
     </div>
     <!-- end table content -->
 @endsection('content')
+@section('extraScript')
+   <script>
+        document.getElementById('btn_search').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('form_filter').submit();
+        });
+   </script>
+@endsection

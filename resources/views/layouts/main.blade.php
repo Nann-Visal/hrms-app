@@ -35,7 +35,7 @@
             <div class="box-dropmn">
                 <img id="ic-dropmn" src="/assets/images/icons/ic_drop_mn.png" alt="">
             </div>
-            <img class="box-profile" id="img-profile" src="/assets/images/img/OIP.jpeg" alt="">
+            <img class="box-profile" id="img-profile" src="/assets/images/img/user.png" alt="">
         </div>
     </nav>
     <!-- end header -->
@@ -101,6 +101,6 @@
     <script src="/bootstrap-5.3.0-alpha3-dist/js/bootstrap.js"></script>
     <script src="/assets/jquery.js"></script>
     <script src="/assets/js/jaction.js"></script>
-
+    @yield("extraScript")
 </body>
 </html>

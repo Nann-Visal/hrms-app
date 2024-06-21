@@ -8,14 +8,14 @@
                         <div class="row g-0">
                             <div class="col-md-12">
                                 <div class="card_footer p-4 d-flex justify-content-center">
-                                    <form action="" class="col-8">
+                                    <form action="{{ route('takeleaves.index-takeleaves')}}" class="col-8">
                                         <div class="row">
                                              <div class="col-8">
-                                                 <label class="form-label" for="start_date">Full Name</label>
-                                                 <input class="form-control form-control-lg @error('start_date') is-invalid @enderror" value="{{old('start_date')}}" type="text"  name="start_date" id="start_date">
+                                                 <label class="form-label" for="full_name">Full Name</label>
+                                                 <input class="form-control form-control-lg @error('full_name') is-invalid @enderror" value="{{old('full_name')}}" type="text"  name="full_name" id="full_name">
                                              </div>
                                              <div class="col-4 pt-4">
-                                                <button type="button" class="btn btn-outline-primary btn-lg mt-2 " style="width: 150px;" onclick="" >Search</button>
+                                                <button type="submit" class="btn btn-outline-primary btn-lg mt-2 " style="width: 150px;" onclick="" >Search</button>
                                             </div>
                                         </div>
                                     </form>

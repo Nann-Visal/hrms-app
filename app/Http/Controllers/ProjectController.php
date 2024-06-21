@@ -5,11 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Project;
 
-class ProjetController extends Controller
+class ProjectController extends Controller
 {
     //index
-    public function index(){
-        $projects = Project::orderby('id','desc')->latest()->limit(15)->get();
+    public function index(Request $request){
+        $projects = Project::when(isset($request->start_date) || isset($request->end_date) || (isset($request->project_status) && $request->project_status != '' ) , function($query) use($request) {
+            $query->orWhere('start_date', $request->start_date)
+            ->orWhere('end_date', $request->end_date)
+            ->orWhere('project_status', $request->project_status);
+        })
+        ->orderby('id','desc')->latest()->limit(15)->get();
         return view('projects.index-project',['projects'=> $projects]);
     }
     //show

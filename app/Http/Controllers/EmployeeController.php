@@ -10,8 +10,11 @@ use App\Models\Employees;
 class EmployeeController extends Controller
 {
     //index
-    public function index(){
-        $employees = Employees::orderby('id','desc')->latest()->limit(15)->get();
+    public function index(Request $request){
+        $employees = Employees::when(isset($request->full_name), function ($query) use ($request) {
+            $query->where('full_name', 'LIKE', '%'.$request->full_name.'%');
+        }
+        )->orderby('id','desc')->latest()->limit(15)->get();
         return view('employees.index-employees',['employees'=> $employees]);
     }
     //create

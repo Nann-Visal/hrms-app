@@ -9,8 +9,11 @@ use Illuminate\Http\Request;
 class EventController extends Controller
 {
     //index
-    public function index(){
-        $events = Event::orderby('id','desc')->latest()->limit(15)->get();
+    public function index(Request $request){
+        $events = Event::when(isset($request->date) || (isset($request->employee_id) && $request->employee_id != ''), function($query) use($request) {
+            $query->orWhere('date', $request->date)
+            ->orWhere('employee_id', $request->employee_id);
+        })->orderby('id','desc')->latest()->limit(15)->get();
         $employees_id = Event::pluck('employee_id');
         $employees = Employees::whereIn('id', $employees_id)->pluck('full_name', 'id');
         return view('events.index',['events'=>$events, 'employees' => $employees]);
