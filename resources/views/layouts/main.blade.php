@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" href="/assets/images/icons/ic_web.png">
-    <title>Div.Alain</title>
+    <title>Zii</title>
 
 
 </head>
@@ -22,11 +22,11 @@
             <div class="box-username">
                 <p id="txt-username">{{Auth::user()->name??'Test User'}}</p>
                 <div class="sub-menu">
-                    <div class="card bg-warning">
-                        <div class="card-body">
+                    <div class="card" style="background-color: #5612D6;">
+                        <div class="card-body p-0">
                             <form action="{{route('logout')}}" method="POST" style="display: inline;">
                                 @csrf
-                                <button class="btn btn-warning" onclick="location.href='{{route('login')}}'">Log Out</button>
+                                <button class="btn text-white fs-5 text-bold w-100  d-flex justify-content-between align-items-center" onclick="location.href='{{route('login')}}'"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
                             </form>
                         </div>
                     </div>

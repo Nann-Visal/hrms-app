@@ -27,7 +27,9 @@ div{
 .box-navbar{
     z-index: 99;
     width: 100%;
-    height: 50px;
+    height: 70px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     background-color: #5612D6;
     position: fixed;
     display: inline-flex;
@@ -130,7 +132,7 @@ div{
 }
 .box-sidebar{
     z-index: 99;
-    margin-top: 50px;
+    margin-top: 70px;
     width: 270px;
     height: 100%;
     position: fixed;

@@ -6,19 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap style -->
     <link rel="stylesheet" href="/bootstrap-5.3.0-alpha3-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" href="/assets/images/icons/ic_web.png">
-    <title>Div.Alain</title>
+    <title>Zii</title>
 
 
 </head>
-<body>
+<body class="d-flex justify-content-center align-items-center" style="background-color:#5612D6;">
 
     <!-- start content -->
-    <div class="container-fluid box-body">
-        @yield('content')
-    </div>
+    @yield('content')
     <!-- end content -->
     <!-- javascript and jquery for bootstrap -->
     <script src="/bootstrap-5.3.0-alpha3-dist/js/bootstrap.js"></script>
