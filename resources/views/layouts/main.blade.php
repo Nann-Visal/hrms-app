@@ -93,7 +93,7 @@
     <!-- end sidebar -->
 
     <!-- start content -->
-    <div class="container-fluid box-body">
+    <div class="container-fluid box-body pt-5">
         @yield('content')
     </div>
     <!-- end content -->
